@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb on-off</title>
+    <style>
+        html{
+            background-color: black;
+        }
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-decoration: solid;
+            background-color: chartreuse;
+        }
+        img{
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <img id="off" class="center" src="off-bulb.jpg" alt="">
+    <button id="btn" class="center">Turn on</button>
+    <script>
+        let btn = document.getElementById("btn");
+        let bulb = document.getElementById("off");
+        let a=0;
+        btn.addEventListener("click",onOff);
+        function onOff(e) {
+            if(btn.textContent.includes("on"))
+           {
+              a++;
+              bulb.src="on-bulb.webp"
+              btn.textContent="Turn-off"
+              
+         }
+         else
+         {
+            a++;
+             bulb.src="off-bulb.jpg"
+              btn.textContent="Turn-on"
+         }
+         if(a>9){
+            bulb.src= "fuse-bulb.jpg";
+              alert("your bulb is fuse please change the bulb");
+            btn.textContent="fuse-bulb";
+          
+         }
+         
+        }  
+        
+    </script>
+    
+</body>
+</html>
